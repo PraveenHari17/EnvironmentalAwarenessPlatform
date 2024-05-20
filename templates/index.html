@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Awareness Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e8f4f8;
+            color: #333;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .initiative {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .btn {
+            margin-right: 10px;
+        }
+        footer {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4 text-center">Community-Driven Environmental Awareness Platform</h1>
+        <a href="{{ url_for('add') }}" class="btn btn-primary mb-4">Add Initiative</a>
+        <div class="list-group">
+            {% for initiative in initiatives %}
+            <div class="initiative">
+                <h5 class="mb-1">{{ initiative.title }}</h5>
+                <p class="mb-1">{{ initiative.description }}</p>
+                <a href="{{ url_for('edit', id=initiative.id) }}" class="btn btn-warning">Edit</a>
+                <a href="{{ url_for('delete', id=initiative.id) }}" class="btn btn-danger">Delete</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Praveen Hari Project</p>
+    </footer>
+</body>
+</html>
