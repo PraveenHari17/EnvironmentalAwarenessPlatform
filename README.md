@@ -17,10 +17,6 @@ This project is an interactive web platform designed to encourage community enga
    cd EnvironmentalAwarenessPlatform
    \`\`\`
 
-2. Install the required packages:
-   \`\`\`bash
-   pip install -r requirements.txt
-   \`\`\`
 
 ## Usage
 
